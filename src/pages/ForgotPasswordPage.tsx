@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from "sonner";
 
 // Custom Layout Components
 import Header from '@/components/layout/Header';
@@ -27,7 +28,6 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { useToast } from "@/components/ui/use-toast";
 
 // Define the form schema using Zod
 const formSchema = z.object({
@@ -38,7 +38,6 @@ const formSchema = z.object({
 
 const ForgotPasswordPage = () => {
   console.log('ForgotPasswordPage loaded');
-  const { toast } = useToast();
   const navigate = useNavigate();
 
   // 1. Define the form using react-hook-form.
@@ -54,8 +53,7 @@ const ForgotPasswordPage = () => {
     // In a real application, you would call an API to send the reset email.
     console.log('Password reset requested for:', values.email);
 
-    toast({
-      title: "Check your email",
+    toast.info("Check your email", {
       description: `If an account exists for ${values.email}, a password reset link has been sent.`,
     });
 
