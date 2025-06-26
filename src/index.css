@@ -81,13 +81,3 @@
     @apply font-heading; /* Apply heading font to heading elements */
   }
 }
-
-@layer utilities {
-  .font-body {
-    font-family: var(--font-body);
-  }
-
-  .font-heading {
-    font-family: var(--font-heading);
-  }
-}
