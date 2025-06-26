@@ -68,19 +68,7 @@
     --input: 240 4% 16%;
     --ring: 217 91% 60%;
   }
-}
 
-@layer utilities {
-  .font-body {
-    font-family: var(--font-body);
-  }
-
-  .font-heading {
-    font-family: var(--font-heading);
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
@@ -91,5 +79,15 @@
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading; /* Apply heading font to heading elements */
+  }
+}
+
+@layer utilities {
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .font-heading {
+    font-family: var(--font-heading);
   }
 }
